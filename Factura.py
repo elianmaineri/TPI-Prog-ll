@@ -11,4 +11,4 @@ class Factura:
         else:
             print("¡¡¡¡¡Error debe abonar el 30% del total del importe!!!!")
 
-    
+        
