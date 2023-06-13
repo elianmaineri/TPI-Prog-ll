@@ -6,9 +6,27 @@ class Factura:
         self.iva = int(iva)
 
     def get_seña(self):
-        if ((self.imptotal * 30)/100) == self.seña:
-            return self.seña
-        else:
-            print("¡¡¡¡¡Error debe abonar el 30% del total del importe!!!!")
+        return self.seña
+    
+    def get_imptotal(self):
+        return self.imptotal
+    
+    def get_gastosAdm(self):
+        return self.gastosAdm
+    
+    def get_iva(self):
+        return self.iva
+    
+    def set_seña(self, nueva_seña):
+        self.seña = nueva_seña
+
+    def set_imptotal(self, nuevo_imptotal):
+        self.imptotal = nuevo_imptotal
+
+    def set_gastosAdm(self, nuevo_gastosAdm):
+        self.gastosAdm = nuevo_gastosAdm
+
+    def set_iva(self, nuevo_iva):
+        self.iva = nuevo_iva
 
         
