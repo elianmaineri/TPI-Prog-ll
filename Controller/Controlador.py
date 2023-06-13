@@ -15,12 +15,12 @@ class controlador:
             choice = self.Vista.validar_entero(0, 4)
             match choice:
                 case 0:
-                    self.mostrar_mayores()
+                    pass
                 case 1:
-                    self.peso_actual()
+                    pass
                 case 2:
-                    self.calcular_peso_ideal()
+                    pass
                 case 3:
-                    self.calcular_diferencia()
+                    pass
                 case 4:
                     break
