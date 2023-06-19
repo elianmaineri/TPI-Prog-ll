@@ -1,11 +1,10 @@
 class Vista:
     def mostrar_menu(self):
         print('MENÚ')
-        print('0. ')
-        print('1. ')
-        print('2. ')
-        print('3. ')
-        print('4. Salir')
+        print('0. Reservar fecha')
+        print('1. Consultar fechas reservadas')
+        print('2. Cancelar reserva')
+        print('3. Salir')
     
     def validar_entero(self, lim_inf, lim_sup):
         while True:

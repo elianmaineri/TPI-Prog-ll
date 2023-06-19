@@ -6,9 +6,6 @@ class controlador:
 
 
 
-
-
-
     def menu(self):
         while True:
             self.Vista.mostrar_menu()
@@ -21,6 +18,4 @@ class controlador:
                 case 2:
                     pass
                 case 3:
-                    pass
-                case 4:
                     break
