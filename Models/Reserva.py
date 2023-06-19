@@ -5,6 +5,9 @@ class Reserva:
         self.horaFin = horaFin
         self.seña = seña
 
+    def __str__(self) -> str:
+        return f" - Dia: {self.dia}\n - Hora Inicio: {self.horaInicio}\n - Hora Fin: {self.horaFin}\n - Seña: {self.seña}\n"
+
     def get_dia(self):
         return self.dia
     
