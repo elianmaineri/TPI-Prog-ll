@@ -15,9 +15,9 @@ class controlador:
         except FileNotFoundError:
                 print('No hay datos cargados')
 
-def fecha_dis(self):
-
-
+    def fecha_dis(self):
+        pass
+    
     def menu(self):
         while True:
             self.Vista.mostrar_menu()

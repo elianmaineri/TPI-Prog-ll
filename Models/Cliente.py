@@ -2,7 +2,7 @@ class Cliente:
     def __init__(self,nombre,apellido,telefono,direccion,dni):
         self.nombre = nombre 
         self.apellido = apellido 
-        self.telefono = telefono 
+        self.telefono = telefono
         self.direccion = direccion 
         self.id = dni  
 
