@@ -1,7 +1,7 @@
 class Reserva:
-    def __init__(self, dia, hora, seña):
+    def __init__(self, dia, horaInicio, horaFin, seña):
         self.dia = dia
-        self.hora = hora
+        self.horaInicio = hora
         self.seña = seña
 
     def get_dia(self):

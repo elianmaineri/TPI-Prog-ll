@@ -22,5 +22,6 @@ class Servicios:
     def get_maquinaDeHumo(self):
         return self.maquinaDeHumo
     
-    
+    def get_maquillaje(self):
+        return self.maquillaje
     
