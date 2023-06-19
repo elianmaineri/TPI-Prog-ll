@@ -5,6 +5,9 @@ class Factura:
         self.gastosAdm = float(gastosAdm)
         self.iva = int(iva)
 
+    def __str__(self) -> str:
+        return f"Seña: {self.seña}\n - Importe Total: {self.imptotal}\n - Gastos Administrativos: {self.gastosAdm}\n - IVA: {self.iva}\n" 
+
     def get_seña(self):
         return self.seña
     

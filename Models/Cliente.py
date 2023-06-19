@@ -3,8 +3,15 @@ class Cliente:
         self.nombre = nombre 
         self.apellido = apellido 
         self.telefono = telefono 
+<<<<<<< HEAD
         self.direccion =direccion 
         self.id = dni  
+=======
+        self.direccion =direccion
+
+    def __str__(self) -> str:
+        return f" - Nombre: {self.nombre}\n - Apellido: {self.apellido}\n - Telefono: {self.telefono}\n - Direccion: {self.direccion}\n"  
+>>>>>>> 6a035b5492387cce590406462de2542205b7fd2f
         
     def get_nombre(self):
         return self.nombre

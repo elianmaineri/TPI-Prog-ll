@@ -8,7 +8,7 @@ class Servicios:
         self.musicaEnVivo = str(musicaEnVivo)
 
     def __str__(self) -> str:
-        return f"Servicios:\n - Dj: {self.dj} \n - Decoracion: {self.decoracion} \n - Cotillon: {self.cotillon} \n - Maquina de Humo: {self.maquinaDeHumo} \n - Maquillaje: {self.maquillaje} \n - Musica en vivo: {self.musicaEnVivo} \n"
+        return f" - Servicios:\n - Dj: {self.dj} \n - Decoracion: {self.decoracion} \n - Cotillon: {self.cotillon} \n - Maquina de Humo: {self.maquinaDeHumo} \n - Maquillaje: {self.maquillaje} \n - Musica en vivo: {self.musicaEnVivo} \n"
     
     def get_dj(self):
         return self.dj
