@@ -1,6 +1,7 @@
 from Views.Vista import Vista
 
 class controlador:
+    
 
 
 

@@ -1,9 +1,10 @@
 class Cliente:
-    def __init__(self,nombre,apellido,telefono,direccion):
+    def __init__(self,nombre,apellido,telefono,direccion,dni):
         self.nombre = nombre 
         self.apellido = apellido 
         self.telefono = telefono 
-        self.direccion =direccion  
+        self.direccion =direccion 
+        self.id = dni  
         
     def get_nombre(self):
         return self.nombre
@@ -17,6 +18,9 @@ class Cliente:
     def get_direccion(self):
         return self.direccion
     
+    def get_id(self):
+        return self.id
+    
     def set_nombre(self,nombre):
         self.nombre = nombre
 
@@ -29,5 +33,8 @@ class Cliente:
     def set_direccion(self,direccion):
         self.direccion = direccion 
     
-    def generar_id():
+    def set_id(self,id):
+        self.id = id 
         
+    
+

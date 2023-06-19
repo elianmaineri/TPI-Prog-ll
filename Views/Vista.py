@@ -19,3 +19,12 @@ class Vista:
                     continue
                 else:
                     return choice
+                
+    def mostrar(dato):
+        print(dato)
+
+    def pedir(pedido):
+        a = input(pedido)
+        return a
+    
+    
