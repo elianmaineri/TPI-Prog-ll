@@ -1,5 +1,7 @@
 from Views.Vista import Vista
 from Models.Cliente import Cliente
+from Models.Reserva import Reserva
+vst = Vista
 
 class controlador:
     def __init__(self, vista):
@@ -15,8 +17,26 @@ class controlador:
         except FileNotFoundError:
                 print('No hay datos cargados')
 
-    def fecha_dis(self):
-        pass
+    def reserva(self,file):   
+        self.reservas=[]
+        try:
+            with open(file) as archivo:
+                for line in archivo:
+                    data = line.strip().split(';')
+                    self.reservas.append(Reserva(str(data[0]), str(data[1]), int(data[2]), str(data[3]),))
+        except FileNotFoundError:
+                print('No hay datos cargados')
+
+    def fecha_dis(self,fecha):
+        for x,y in enumerate(self.reservas):
+            if (fecha == y.get_dia()):
+                vst.mostrar("Esta fecha ya esta reservada ")
+                
+
+
+
+
+        
     
     def menu(self):
         while True:
