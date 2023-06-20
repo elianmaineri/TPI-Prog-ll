@@ -1,10 +1,8 @@
-from Servicios import Servicios
-from Cliente import Cliente
-from Reserva import Reserva
+from Controller.Controlador import controlador
+from Views.Vista import Vista
 
-evento1 = Servicios("No", "Si", "No", "Si", "No", "Si")
+archivo = 'Servicios.txt'
+vista = Vista()
+Controlador = controlador(vista)
 
-evento2 = Servicios(input("Quiere Dj? "), input("Quiere Decoracion? "), input("Quiere Cotillon? "), input("Quiere Maquina de humo? "), input("Quiere Maquillaje? "), input("Quiere Musica en vivo? ") )
-
-print(f"Evento 1: {evento1}")
-print(f"Evento 2: {evento2}")
+Controlador.menu()

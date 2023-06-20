@@ -44,14 +44,17 @@ class controlador:
             if (fecha == y.get_dia()):
                 vst.mostrar("Esta fecha ya esta reservada ")
             else:
-                for i,j in enumerate(self.servicios):
-                    pass
+                pass
+
+    def solicitar_servicios(self):
+        for i,j in enumerate(self.servicio):
+            vst.confirmar_servicios()
 
     
     def menu(self):
         while True:
-            self.Vista.mostrar_menu()
-            choice = self.Vista.validar_entero(0, 4)
+            self.vista.mostrar_menu()
+            choice = self.vista.validar_entero(0, 4)
             match choice:
                 case 0:
                     pass
