@@ -26,7 +26,7 @@ class controlador:
             with open(file) as archivo:
                 for line in archivo:
                     data = line.strip().split(';')
-                    self.reservas.append(Reserva(str(data[0]), str(data[1]), int(data[2]), str(data[3])))
+                    self.reservas.append(Reserva(int(data[0]), int(data[1]), int(data[2]), int(data[3]), int(data[4]),  int(data[5])))
         except FileNotFoundError:
                 print('No hay datos cargados')
 
@@ -36,7 +36,7 @@ class controlador:
             with open(file) as archivo:
                 for line in archivo:
                     data = line.strip().split(';')
-                    self.servicios.append(Servicios(str(data[0]), str(data[1]), str(data[2]), str(data[3]), str(data[4]), str(data[5])))
+                    self.servicios.append(Servicios(str(data[0]), str(data[1])))
         except FileNotFoundError:
                 print('No hay datos cargados')
 
@@ -51,6 +51,11 @@ class controlador:
         for i,j in enumerate(self.servicio):
             vst.confirmar_servicios()
 
+    def consultar_fechas(self):
+        for line,j in enumerate(self.reservas):
+            self.vista.mostrar_reserva((f'{self.reservas[line].get_()} - {self.reservas[line].get_mail()}'))
+
+
     def cancelar_reserva(self):
         dia_hoy = date.today()
         mes_hoy = date.today()
@@ -63,7 +68,7 @@ class controlador:
             diferencia += ((self.reservas[x].get_mes() - mes_hoy)*30)
             diferencia += (self.reservas[x].get_dia() - dia_hoy)
             if diferencia >= 15:
-                devolver = (self.reserva.get_seña()/1.2)
+                devolver = (self.reservas.get_seña()/1.2)
                 self.vista.devolver_dinero(devolver)
             else:
                 self.vista.no_devolver()
