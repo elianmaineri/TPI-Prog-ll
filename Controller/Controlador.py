@@ -2,6 +2,7 @@ from Views.Vista import Vista
 from Models.Cliente import Cliente
 from Models.Reserva import Reserva
 from Models.Servicios import Servicios
+from datetime import date
 
 vst = Vista
 
@@ -51,9 +52,17 @@ class controlador:
             vst.confirmar_servicios()
 
     def cancelar_reserva(self):
+        dia_hoy = date.today()
+        mes_hoy = date.today()
+        año_hoy = date.today()
+        dia_hoy = int(dia_hoy.strftime('%d'))
+        mes_hoy = int(mes_hoy.strftime('%m'))
+        año_hoy = int(año_hoy.strftime('%Y'))
         for x,y in enumerate(self.reservas):
-            #sacar duda
-            if self.reservas[x].get_fecha() >= 15:
+            diferencia += ((self.reservas[x].get_año() - año_hoy)*365)
+            diferencia += ((self.reservas[x].get_mes() - mes_hoy)*30)
+            diferencia += (self.reservas[x].get_dia() - dia_hoy)
+            if diferencia >= 15:
                 devolver = (self.reserva.get_seña()/1.2)
                 self.vista.devolver_dinero(devolver)
             else:
