@@ -1,6 +1,8 @@
 from Views.Vista import Vista
 from Models.Cliente import Cliente
 from Models.Reserva import Reserva
+from Models.Servicios import Servicios
+
 vst = Vista
 
 class controlador:
@@ -23,7 +25,17 @@ class controlador:
             with open(file) as archivo:
                 for line in archivo:
                     data = line.strip().split(';')
-                    self.reservas.append(Reserva(str(data[0]), str(data[1]), int(data[2]), str(data[3]),))
+                    self.reservas.append(Reserva(str(data[0]), str(data[1]), int(data[2]), str(data[3])))
+        except FileNotFoundError:
+                print('No hay datos cargados')
+
+    def reserva(self,file):   
+        self.servicios=[]
+        try:
+            with open(file) as archivo:
+                for line in archivo:
+                    data = line.strip().split(';')
+                    self.servicios.append(Servicios(str(data[0]), str(data[1]), str(data[2]), str(data[3]), str(data[4]), str(data[5])))
         except FileNotFoundError:
                 print('No hay datos cargados')
 
@@ -31,6 +43,9 @@ class controlador:
         for x,y in enumerate(self.reservas):
             if (fecha == y.get_dia()):
                 vst.mostrar("Esta fecha ya esta reservada ")
+            else:
+                for i,j in enumerate(self.servicios):
+                    vst.confirmar_servicios()
                 
 
 

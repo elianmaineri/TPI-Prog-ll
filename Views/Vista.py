@@ -27,4 +27,8 @@ class Vista:
         a = input(pedido)
         return a
     
+    def confirmar_servicios(self):
+        j = input("Quiere el siguiente servicio ")
+        return j
+    
     
