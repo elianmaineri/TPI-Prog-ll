@@ -53,7 +53,7 @@ class controlador:
 
     def consultar_fechas(self):
         for line,j in enumerate(self.reservas):
-            self.vista.mostrar_reserva((f'{self.reservas[line].get_()} - {self.reservas[line].get_mail()}'))
+            self.vista.mostrar_reserva((f'{self.reservas[line].get_dia()} - {self.reservas[line].get_mes()} - {self.reservas[line].get_año()} - {self.reservas[line].get_horaInicio()} - {self.reservas[line].get_horaFin()}'))
 
 
     def cancelar_reserva(self):
@@ -82,7 +82,7 @@ class controlador:
                 case 0:
                     pass
                 case 1:
-                    pass
+                    self.consultar_fechas()
                 case 2:
                     self.cancelar_reserva()
                 case 3:
