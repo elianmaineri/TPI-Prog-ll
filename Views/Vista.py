@@ -31,4 +31,9 @@ class Vista:
         j = input("Quiere el siguiente servicio ")
         return j
     
+    def devolver_dinero(self, dinero):
+        print(f"Se devulve el 20% de su dinero: ${dinero}")
+
+    def no_devolver(self):
+        print("No se reintegra nada de dinero, ya que paso el tiempo limite")
     

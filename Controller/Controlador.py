@@ -50,6 +50,15 @@ class controlador:
         for i,j in enumerate(self.servicio):
             vst.confirmar_servicios()
 
+    def cancelar_reserva(self):
+        for x,y in enumerate(self.reservas):
+            #sacar duda
+            if self.reservas[x].get_fecha() >= 15:
+                devolver = (self.reserva.get_seña()/1.2)
+                self.vista.devolver_dinero(devolver)
+            else:
+                self.vista.no_devolver()
+
     
     def menu(self):
         while True:
@@ -61,6 +70,6 @@ class controlador:
                 case 1:
                     pass
                 case 2:
-                    pass
+                    self.cancelar_reserva()
                 case 3:
                     break
