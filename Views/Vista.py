@@ -31,8 +31,32 @@ class Vista:
         j = input("Quiere el siguiente servicio ")
         return j
     
-    def devolver_dinero(self, dinero):
-        print(f"Se devulve el 20% de su dinero: ${dinero}")
+    def pedir_fecha(self):
+        return input("Ingrese la fecha del evento (DD-MM-AAAA): ")
+    
+    def mostrar_fecha_disponible(self, fecha_disponible):
+        print(f"La fecha solicitada no está disponible. La fecha más próxima disponible es: {fecha_disponible}")
+    
+    def pedir_servicios(self):
+        servicios = ["dj", "decoración", "cotillón", "máquina de humo", "maquillaje", "música en vivo"]
+        print("Seleccione los servicios deseados:")
+        for i, servicio in enumerate(servicios, 1):
+            print(f"{i}. {servicio}")
+        servicio_elegido = input("Ingrese los números correspondientes a los servicios separados por comas: ")
+        servicio_elegido = [int(elegido) for elegido in servicio_elegido.split(",")]
+        return servicio_elegido
+    
+    def mostrar_costo_total(self, costo_total):
+        print(f"El costo total del evento es: ${costo_total}")
+    
+    def mostrar_seña(self, seña):
+        print(f"El monto de la señal requerida es: ${seña}")
+        
+    def pedir_fecha_cancelacion(self):
+        return input("Ingrese la fecha de cancelación (DD-MM-AAAA): ")
+    
+    def mostrar_monto_a_devolver(self, devolucion):
+        print(f"El monto a devolver es: ${devolucion}")
 
     def mostras_reserva(self, nombre):
         print(nombre)
