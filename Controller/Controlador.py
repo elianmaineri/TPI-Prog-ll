@@ -39,12 +39,34 @@ class controlador:
         except FileNotFoundError:
                 print('No hay datos cargados')
 
-    def fecha_dis(self,fecha):
+    def chek_fecha(self,dia,mes,ano,):
+        a = True
         for x,y in enumerate(self.reservas):
-            if (fecha == y.get_dia()):
+            if (dia == y.get_dia()) and (y.get_mes()==mes) and (y.get_ano()==ano):
                 vst.mostrar("Esta fecha ya esta reservada ")
+                a = False
             else:
                 pass
+        
+        if a :
+            return (dia,mes,ano) 
+        else:
+            vst.mostrar("dias disponibles ")
+            for i in range(-5,5,1):
+                b = dia+i
+                if b==0:
+                    dia += 30 
+                    mes -= 1
+                else:
+                    pass
+                for x,y in enumerate(self.reservas):
+                    if (dia == y.get_dia()) and (y.get_mes()==mes) and (y.get_ano()==ano):
+                        pass
+                    else:
+                        vst.mostrar(f"{dia}/{mes}/{ano}")
+    
+
+
 
     def solicitar_servicios(self):
         for i,j in enumerate(self.servicio):

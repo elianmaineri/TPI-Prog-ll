@@ -20,7 +20,7 @@ class Vista:
                 else:
                     return choice
                 
-    def mostrar(dato):
+    def mostrar(self,dato):
         print(dato)
 
     def pedir(pedido):
