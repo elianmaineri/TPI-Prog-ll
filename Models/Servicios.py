@@ -24,4 +24,25 @@ class Servicios:
     
     def get_maquillaje(self):
         return self.maquillaje
+
+    def get_musicaEnVivo(self):
+        return self.musicaEnVivo
+    
+    def set_dj(self, nuevo_dj):
+        self.dj = nuevo_dj
+
+    def set_decoracion(self, nueva_decoracion):
+        self.decoracion = nueva_decoracion
+
+    def set_cotillon(self, nuevo_cotillon):
+        self.cotillon = nuevo_cotillon
+
+    def set_maquinaDeHumo(self, nueva_maquinaDeHumo):
+        self.maquinaDeHumo = nueva_maquinaDeHumo
+
+    def set_maquillaje(self, nuevo_maquillaje):
+        self.maquillaje = nuevo_maquillaje
+
+    def set_musicaEnVivo(self, nueva_musicaEnVivo):
+        self.musicaEnVivo = nueva_musicaEnVivo
     

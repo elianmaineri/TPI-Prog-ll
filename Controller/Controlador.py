@@ -29,7 +29,7 @@ class controlador:
         except FileNotFoundError:
                 print('No hay datos cargados')
 
-    def reserva(self,file):   
+    def servicio(self,file):   
         self.servicios=[]
         try:
             with open(file) as archivo:
@@ -45,13 +45,8 @@ class controlador:
                 vst.mostrar("Esta fecha ya esta reservada ")
             else:
                 for i,j in enumerate(self.servicios):
-                    vst.confirmar_servicios()
-                
+                    pass
 
-
-
-
-        
     
     def menu(self):
         while True:
