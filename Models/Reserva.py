@@ -1,11 +1,13 @@
 class Reserva:
-    def __init__(self, dia, mes, año, horaInicio, horaFin, seña):
+    def __init__(self, dia, mes, año, horaInicio,duracion,idc,ids,paga):
         self.dia = dia
         self.mes = mes
         self.año = año
         self.horaInicio = horaInicio
-        self.horaFin = horaFin
-        self.seña = seña
+        self.duracion = duracion
+        self.id_Cliente  = idc 
+        self.id_servicios = ids
+        self.paga = paga
 
     def __str__(self) -> str:
         return f" - Dia: {self.dia}\n - Mes: {self.mes}\n  - Año: {self.año}\n - Hora Inicio: {self.horaInicio}\n - Hora Fin: {self.horaFin}\n - Seña: {self.seña}\n"

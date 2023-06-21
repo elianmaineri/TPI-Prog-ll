@@ -3,7 +3,7 @@ from Models.Cliente import Cliente
 from Models.Reserva import Reserva
 from Models.Servicios import Servicios
 from datetime import date
-
+gastosadm= (5000)
 vst = Vista
 
 class controlador:
@@ -39,8 +39,27 @@ class controlador:
                     self.servicios.append(Servicios(str(data[0]), str(data[1])))
         except FileNotFoundError:
                 print('No hay datos cargados')
+    
+    def servselecs(self,file): 
+        lista = []  
+        self.servselec=[]
+        co = 0
+        try:
+            with open(file) as archivo:
+                for line in archivo:
+                    data = line.strip().split(';')
+                    for i,j in enumerate(data):
+                        if i>1:
+                            lista.append(data[i])
+                        else:
+                            pass
+                    self.servselec.append(Servicios(str(data[0]), str(data[1] , lista)))
+        except FileNotFoundError:
+                print('No hay datos cargados')
+
 
     def chek_fecha(self,dia,mes,ano,):
+        serv=[]
         a = True
         for x,y in enumerate(self.reservas):
             if (dia == y.get_dia()) and (y.get_mes()==mes) and (y.get_ano()==ano):
@@ -48,9 +67,11 @@ class controlador:
                 a = False
             else:
                 pass
-        
         if a :
-            return (dia,mes,ano) 
+            serv.append(dia)
+            serv.append(mes)
+            serv.append(ano)
+            return (serv) 
         else:
             vst.mostrar("dias disponibles ")
             for i in range(-5,5,1):
@@ -66,17 +87,32 @@ class controlador:
                     else:
                         vst.mostrar(f"{dia}/{mes}/{ano}")
     
+    def seleccion_servicios(self):
+        while True:
+            serv_sel=[]
+            vst.menu_ser()
+            op=vst.validar_entero(1,2)
+            if op == 1 :
+                for i,j in enumerate(self.servicios):
+                    vst.mostrar(f"{i+1} - {j[i].get_nombre()}")
+                a=vst.validar_entero(1,len(self.servicios))
+                serv_sel.append(self.servicios[i-1])
+            else:
+                break
 
-
-
-    def solicitar_servicios(self):
-        for i,j in enumerate(self.servicio):
-            vst.confirmar_servicios()
-
+        return serv_sel
+    
+    def calcular_pago(self,list,res):
+        a=0 
+        for i,j in enumerate(list):
+            a += (j.get_precio()*res.get_duracion())
+            a += (gastosadm)
+            a = (a*1.21)
+        return a 
+    
     def consultar_fechas(self):
         for line,j in enumerate(self.reservas):
             self.vista.mostrar_reserva((f'{self.reservas[line].get_dia()} - {self.reservas[line].get_mes()} - {self.reservas[line].get_año()} - {self.reservas[line].get_horaInicio()} - {self.reservas[line].get_horaFin()}'))
-
 
     def cancelar_reserva(self):
         dia_hoy = date.today()
@@ -99,13 +135,14 @@ class controlador:
     def menu(self):
         while True:
             self.vista.mostrar_menu()
-            choice = self.vista.validar_entero(0, 4)
+            choice = self.vista.validar_entero(0, 5)
             match choice:
                 case 0:
-                    pass
+                    aux=self.chek_fecha()
+    
                 case 1:
                     self.consultar_fechas()
                 case 2:
                     self.cancelar_reserva()
-                case 3:
+                case 4:
                     break

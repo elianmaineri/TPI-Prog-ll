@@ -4,8 +4,17 @@ class Vista:
         print('0. Reservar fecha')
         print('1. Consultar fechas reservadas')
         print('2. Cancelar reserva')
-        print('3. Salir')
+        print("3. calcular costos totales ")
+        print("4. registrar pago seña ")
     
+        print('4. Salir')
+    
+    def menu_ser():
+        print ("MENU")
+        print("1-Agregar otro servicio")
+        print("2- salir al menu ")
+
+
     def validar_entero(self, lim_inf, lim_sup):
         while True:
             try:
@@ -19,7 +28,7 @@ class Vista:
                     continue
                 else:
                     return choice
-                
+        
     def mostrar(self,dato):
         print(dato)
 
@@ -34,8 +43,8 @@ class Vista:
     def devolver_dinero(self, dinero):
         print(f"Se devulve el 20% de su dinero: ${dinero}")
 
-    def mostras_reserva(self,)
-
+    def mostras_reserva(self,):
+        pass
     def no_devolver(self):
         print("No se reintegra nada de dinero, ya que paso el tiempo limite")
     
